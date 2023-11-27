@@ -44,8 +44,18 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+binding.Signup.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        String email=binding.editTextTextEmailAddress.getText().toString();
+        String password=binding.editTextTextPassword.getText().toString();
 
+        if (!email.isEmpty() && !password.isEmpty()){
+            mViewModel.register(email , password);
+        }
 
+    }
+});
     }
 
     @Override

@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class AuthRepository {
-    private Application application;
+
     private MutableLiveData<FirebaseUser> firebaseUserMutableLiveData;
     private MutableLiveData<Boolean> userLoggedMutableLiveData;
     private FirebaseAuth auth;
@@ -48,7 +48,7 @@ public class AuthRepository {
                 if (task.isSuccessful()){
                     firebaseUserMutableLiveData.postValue(auth.getCurrentUser());
                 }else{
-                    Toast.makeText(application, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
